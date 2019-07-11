@@ -9,11 +9,12 @@ import CourseService from '../services/CourseService';
 export class CourseGridComponent implements OnInit {
 
   courses = [];
-  constructor(private service: CourseService) { }
+  constructor(service: CourseService) {
+    service.findAllCourses()
+      .then(courses => this.courses = courses);
+  }
 
   ngOnInit() {
-    this.service.findAllCourses()
-      .then(courses => this.courses = courses);
   }
 
 }

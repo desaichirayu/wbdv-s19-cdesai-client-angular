@@ -2,7 +2,7 @@ import * as constants from '../constants';
 import {Injectable} from '@angular/core';
 const serverURL = constants.SERVER_URL;
 
-@Injectable()
+@Injectable({providedIn: 'root'})
 export default class CourseService {
 
   createCourse = course => fetch(serverURL + '/api/courses', {
