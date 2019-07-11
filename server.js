@@ -5,7 +5,7 @@ const path = require('path');
 const app = express();
 
 // Serve only the static files form the dist directory
-app.use(express.static('./dist/wbdv-s19-cdesai-client-angular'));
+app.use(express.static(__dirname + '/dist/wbdv-s19-cdesai-client-angular'));
 
 app.get('/*', function(req,res) {
 
