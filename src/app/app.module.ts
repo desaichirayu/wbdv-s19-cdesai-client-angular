@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {FormsModule} from '@angular/forms';
 import { CourseGridComponent } from './course-grid/course-grid.component';
-import CourseService from './services/CourseService';
+import {CourseService} from './services/course.service';
 
 @NgModule({
   declarations: [

@@ -3,7 +3,7 @@ import {Injectable} from '@angular/core';
 const serverURL = constants.SERVER_URL;
 
 @Injectable({providedIn: 'root'})
-export default class CourseService {
+export class CourseService {
 
   createCourse = course => fetch(serverURL + '/api/courses', {
     body: JSON.stringify(course),

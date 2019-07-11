@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import CourseService from '../services/CourseService';
+import {CourseService} from '../services/course.service';
 
 @Component({
   selector: 'app-course-grid',
