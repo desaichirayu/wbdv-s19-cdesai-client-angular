@@ -1,0 +1,11 @@
+<div class="border border-light rounded row mt-1">
+  <ul class="nav nav-pills nav-fill col-12">
+<!--    <li class="nav-item font-weight-bold">Topics</li>-->
+    <li *ngFor="let topic of topics" class="nav-item">
+      <div [ngClass]="{'active' : topic.id == topicId}"
+           class="nav-link">
+        <a routerLink="/course/{{courseId}}/module/{{moduleId}}/lesson/{{lessonId}}/topic/{{topic.id}}/widget" style="color: inherit">{{topic.title}}</a>
+      </div>
+    </li>
+  </ul>
+</div>

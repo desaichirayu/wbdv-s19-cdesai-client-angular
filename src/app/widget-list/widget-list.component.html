@@ -1,0 +1,55 @@
+<div class="container-fluid">
+  <ul class="list-group">
+    <div class="card m-2">
+      <div class="card-body">
+<!--        <li class="list-group-item">-->
+<!--        Widgets-->
+<!--        </li>-->
+        <li
+          *ngFor="let widget of widgets" class="list-group-item">
+          <div class="row">
+            <div class="col-4">
+<!--              <h4 *ngIf="widget.type === 'HEADING'">Heading Widget</h4>-->
+<!--              <h4 *ngIf="widget.type === 'PARAGRAPH'">Paragraph Widget</h4>-->
+<!--              <h4 *ngIf="widget.type === 'LIST'">List Widget</h4>-->
+<!--              <h4 *ngIf="widget.type === 'LINK'">Link Widget</h4>-->
+<!--              <h4 *ngIf="widget.type === 'IMAGE'">Image Widget</h4>-->
+            </div>
+            <div class="col-8">
+
+            </div>
+          </div>
+          <div *ngIf="widget.type === 'HEADING'" class="row m-1">
+            <h1 *ngIf="widget.size == 1">{{widget.text}}</h1>
+            <h2 *ngIf="widget.size == 2">{{widget.text}}</h2>
+            <h3 *ngIf="widget.size == 3">{{widget.text}}</h3>
+            <h4 *ngIf="widget.size == 4">{{widget.text}}</h4>
+          </div>
+          <div *ngIf="widget.type === 'PARAGRAPH'" class="row m-1">
+            <p>{{widget.paraText}}</p>
+          </div>
+          <div *ngIf="widget.type === 'LINK'" class="row m-1">
+            <a href="{{widget.href}}">{{widget.linkText}}</a>
+          </div>
+          <div *ngIf="widget.type === 'LIST'" class="row m-1">
+            <ul *ngIf="widget.listType == 0">
+
+              <li *ngFor="let item of splitItems(widget.items)">
+                {{item}}
+              </li>
+            </ul>
+            <ol *ngIf="widget.listType == 1">
+              <li *ngFor="let item of splitItems(widget.items)">
+                {{item}}
+              </li>
+            </ol>
+          </div>
+          <div *ngIf="widget.type === 'IMAGE'" class="row m-1">
+            <img src="{{widget.src}}" alt="Picsum" style="width: 200px; height: 300px" />
+          </div>
+        </li>
+      </div>
+    </div>
+
+  </ul>
+</div>

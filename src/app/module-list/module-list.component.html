@@ -1,0 +1,9 @@
+<div>
+  <ul>
+    <li
+      [ngClass]="{'active' : module.id == moduleId}"
+      *ngFor="let module of modules" class="list-group-item">
+      <a routerLink="/course/{{courseId}}/module/{{module.id}}/lesson" style="color: inherit">{{module.title}}</a>
+    </li>
+  </ul>
+</div>
