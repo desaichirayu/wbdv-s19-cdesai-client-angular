@@ -6,6 +6,10 @@ import { AppComponent } from './app.component';
 import {FormsModule} from '@angular/forms';
 import { CourseGridComponent } from './course-grid/course-grid.component';
 import {CourseService} from './services/course.service';
+import {ModuleService} from './services/module.service';
+import {LessonService} from './services/lesson.service';
+import {TopicService} from './services/topic.service';
+import {WidgetService} from './services/widget.service';
 
 @NgModule({
   declarations: [
@@ -17,7 +21,7 @@ import {CourseService} from './services/course.service';
     AppRoutingModule,
     FormsModule
   ],
-  providers: [CourseService],
+  providers: [CourseService, ModuleService, LessonService, TopicService, WidgetService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
