@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
-import {LessonService} from '../services/lesson.service';
+import {LessonServiceClient} from '../services/lesson.service.client';
 
 @Component({
   selector: 'app-lesson-tabs',
@@ -13,7 +13,7 @@ export class LessonTabsComponent implements OnInit {
   moduleId = -1;
   lessonId = -1;
   lessons = [];
-  constructor(private activatedRoute: ActivatedRoute, private service: LessonService) { }
+  constructor(private activatedRoute: ActivatedRoute, private service: LessonServiceClient) { }
 
   ngOnInit() {
     this.activatedRoute.params.subscribe(
@@ -21,7 +21,7 @@ export class LessonTabsComponent implements OnInit {
         this.courseId = params.courseId;
         this.moduleId = params.moduleId;
         this.lessonId = params.lessonId;
-        this.service.findAllLessonForModuleById(this.moduleId).then(lessons => this.lessons = lessons);
+        this.service.findLessonsForModule(this.moduleId).then(lessons => this.lessons = lessons);
       }
     );
   }

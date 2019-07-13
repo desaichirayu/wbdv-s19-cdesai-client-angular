@@ -5,11 +5,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {FormsModule} from '@angular/forms';
 import { CourseGridComponent } from './course-grid/course-grid.component';
-import {CourseService} from './services/course.service';
-import {ModuleService} from './services/module.service';
-import {LessonService} from './services/lesson.service';
-import {TopicService} from './services/topic.service';
-import {WidgetService} from './services/widget.service';
+import {CourseServiceClient} from './services/course.service.client';
+import {ModuleServiceClient} from './services/module.service.client';
+import {LessonServiceClient} from './services/lesson.service.client';
+import {TopicServiceClient} from './services/topic.service.client';
+import {WidgetServiceClient} from './services/widget.service.client';
 import {CourseViewerComponent} from './course-viewer/course-viewer.component';
 import {ModuleListComponent} from './module-list/module-list.component';
 import {LessonTabsComponent} from './lesson-tabs/lesson-tabs.component';
@@ -31,7 +31,7 @@ import {WidgetListComponent} from './widget-list/widget-list.component';
     AppRoutingModule,
     FormsModule
   ],
-  providers: [CourseService, ModuleService, LessonService, TopicService, WidgetService],
+  providers: [CourseServiceClient, ModuleServiceClient, LessonServiceClient, TopicServiceClient, WidgetServiceClient],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

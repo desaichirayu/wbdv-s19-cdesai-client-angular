@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
-import {WidgetService} from '../services/widget.service';
+import {WidgetServiceClient} from '../services/widget.service.client';
 
 @Component({
   selector: 'app-widget-list',
@@ -15,7 +15,7 @@ export class WidgetListComponent implements OnInit {
   topicId = -1;
   widgets = [];
 
-  constructor(private activatedRoute: ActivatedRoute, private service: WidgetService) { }
+  constructor(private activatedRoute: ActivatedRoute, private service: WidgetServiceClient) { }
 
   ngOnInit() {
     this.activatedRoute.params.subscribe(
@@ -24,7 +24,7 @@ export class WidgetListComponent implements OnInit {
         this.moduleId = params.moduleId;
         this.lessonId = params.lessonId;
         this.topicId = params.topicId;
-        this.service.findAllWidgets(this.topicId).then(widgets => this.widgets = widgets);
+        this.service.findWidgetsForTopic(this.topicId).then(widgets => this.widgets = widgets);
       }
     );
   }

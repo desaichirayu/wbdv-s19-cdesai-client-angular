@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
-import {CourseService} from '../services/course.service';
+import {CourseServiceClient} from '../services/course.service.client';
 
 
 @Component({
@@ -11,7 +11,7 @@ import {CourseService} from '../services/course.service';
 export class CourseViewerComponent implements OnInit {
 
 
-  constructor(private activatedRoute: ActivatedRoute, private service: CourseService) {
+  constructor(private activatedRoute: ActivatedRoute, private service: CourseServiceClient) {
   }
 
   ngOnInit() {
